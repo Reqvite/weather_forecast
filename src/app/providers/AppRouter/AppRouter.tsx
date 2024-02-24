@@ -11,7 +11,7 @@ export const AppRouter = () => {
 
         const element = (
             <Suspense fallback={<Loader isOverflow/>}>
-                <main>
+                <main className='main'>
                     <h1 className="visually-hidden">Weather forecast</h1>
                     {route.element}
                 </main>

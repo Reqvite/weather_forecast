@@ -17,7 +17,10 @@
   --font-size-600: 36px;
   --container-width: 1000px;
 
-  --animation-duration: 300ms
+  --animation-duration: 300ms;
+  --border-primary: 2px solid rgb(100, 100, 99);
+
+  --max-width: 1400px
 }
 
 * {
@@ -40,4 +43,8 @@ select {
 
 a {
   text-decoration: none;
+}
+
+img {
+  display: block;
 }
