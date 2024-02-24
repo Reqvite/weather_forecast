@@ -1,5 +1,6 @@
 export {Button} from './Button/Button'
 export { GoogleLogin, GoogleLogout } from './Google'
+export { Input} from './Input/Input'
 export { Loader } from './Loader/Loader'
 export {StickyContentLayout} from './StickyContentLayout/StickyContentLayout'
-export {Text} from './Text/Text'
+export { Text } from './Text/Text'

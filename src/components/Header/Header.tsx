@@ -1,7 +1,8 @@
 import './header.css'
 
 import { useAuth } from '@/shared/lib/hooks'
-import { GoogleLogout, Text } from '@/shared/ui'
+import { GoogleLogout, Input, Text } from '@/shared/ui'
+
 
 export const Header = () => {
     const { user, isAuth } = useAuth()

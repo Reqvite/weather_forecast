@@ -14,7 +14,6 @@ export function RequireAuth({ children }: RequireAuthProps) {
     const location = useLocation();
     const {isAuth} = useAuth()
 
-    console.log(isAuth)
     if (!isAuth) {
         return (
             <Navigate to={getRouteSignIn()} state={{ from: location }} replace />

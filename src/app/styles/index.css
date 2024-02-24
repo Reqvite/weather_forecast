@@ -8,7 +8,7 @@
   --color-primary: #242a3a;
   --color-secondary: rgb(100, 100, 99);
   --overlay-color: rgb(0 0 0 / 30%);
-  --shadow: -1px 4px 74px -16px rgb(0 0 0 / 15%);
+  --shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
   --font-size-100: 14px;
   --font-size-200: 16px;
   --font-size-300: 18px;

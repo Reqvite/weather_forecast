@@ -1,0 +1,41 @@
+.input {
+    padding: 10px 30px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #24292e;
+    vertical-align: middle;
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    border: 1px solid #e1e4e8;
+    border-radius: 6px;
+    outline: none;
+}
+
+:focus {
+    border-color: #0366d6;
+    outline: none;
+    box-shadow: var(--shadow);
+}
+
+.inputBox {
+    margin-top: 5px;
+    position: relative;
+}
+
+.rightAddon {
+    position: absolute;
+    right: 0;
+}
+
+.leftAddon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.leftAddon svg {
+    width: 15px;
+    height: 15px;
+}

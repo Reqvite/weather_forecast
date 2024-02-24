@@ -1,0 +1,7 @@
+.WeatherByDayWidgetBox {
+    display: block;
+    width: 100%;
+
+    background: red;
+    height: 500px;
+}

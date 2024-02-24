@@ -1,6 +1,6 @@
 import '../app/styles/App.css'
 
-import { Header } from '@/components'
+import { Header } from '@/components/Header'
 
 import { AppRouter } from './providers'
 
