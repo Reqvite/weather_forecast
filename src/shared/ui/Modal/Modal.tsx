@@ -54,7 +54,9 @@ export const Modal = (props: ModalProps):JSX.Element => {
                         {title && <Text>{title}</Text>}
                         <Button className='modal__closeButton' onClick={onClose}><PlusIcon/></Button>
                     </div>
-                    {children}
+                    <div className='modal__body'>
+                        {children}
+                    </div>
                     {withFooter && <div className='modal-footer'>
                         <Button variant='outline' className='modal-footer__closeButton' onClick={onClose}>Close</Button>
                         <Button className='modal-footer__closeButton' onClick={onClick}>Save</Button>

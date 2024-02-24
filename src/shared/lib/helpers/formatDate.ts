@@ -10,3 +10,13 @@ export function formatDate(dateString:string) {
 
     return `${day}.${month}.${year}`;
 }
+
+
+export const getWithin15Date = (today: Date) => {
+    const endDate = new Date(today); 
+    endDate.setDate(today.getDate() + 14); 
+
+    return { 
+        startDate: today.toISOString().slice(0, 10), 
+    };
+};

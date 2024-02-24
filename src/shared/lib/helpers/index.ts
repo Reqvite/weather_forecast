@@ -1,2 +1,2 @@
 export { classNames } from './classNames'
-export {formatDate} from './formatDate'
+export { formatDate, getWithin15Date } from './formatDate'

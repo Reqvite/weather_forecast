@@ -1,10 +1,11 @@
 import { useState } from "react"
 
 import { Filter } from "@/components/Filter"
+import { CreateTripModal } from "@/components/Modals"
 import { TripsList } from "@/components/TripsList/TripsList"
 import { WeatherByDayWidget } from "@/components/WeatherWidgets"
 import trips from '@/shared/data/trips.json'
-import { Modal, StickyContentLayout } from "@/shared/ui"
+import { StickyContentLayout } from "@/shared/ui"
 
 
 const MainPage = () => {
@@ -19,7 +20,7 @@ const MainPage = () => {
         <StickyContentLayout content={<>
             <Filter list={trips} setList={setTripsList} />
             <TripsList list={tripsList} setModalIsOpen={onToggleModal} />
-            {modalIsOpen && <Modal onClose={onToggleModal}/>}
+            {modalIsOpen && <CreateTripModal onClose={onToggleModal}/>}
         </>} right={<WeatherByDayWidget/>} />
     )
 }

@@ -12,17 +12,18 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     label?: string;
     leftAddon?: ReactNode,
     rightAddon?: ReactNode,
+    fullWidth?: boolean,
 }
 
 export const Input = (props: InputProps) => {
-    const {className, label,leftAddon,rightAddon, ...otherProps } = props
+    const {className, label,leftAddon,rightAddon,fullWidth = false, ...otherProps } = props
     return (
         <label className={classNames('label', {}, [className])}>
-            {label &&  <Text tag='span'>{label}</Text>}
+            {label &&  <Text size='medium' tag='span'>{label}</Text>}
             <div className='inputBox'>
                 {leftAddon && <div className='leftAddon'>{leftAddon}</div>}
                 <input
-                    className={classNames('input', {}, [])}
+                    className={classNames('input', {fullWidth: fullWidth}, [])}
                     {...otherProps}
                 />
                 {rightAddon &&  <div className='rightAddon'>{rightAddon}</div>} 

@@ -23,6 +23,10 @@
     position: relative;
 }
 
+.input.fullWidth {
+    width: 100%;
+}
+
 .rightAddon {
     position: absolute;
     right: 0;
