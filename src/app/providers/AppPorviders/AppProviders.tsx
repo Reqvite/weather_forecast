@@ -1,5 +1,7 @@
 import { ReactNode } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary'
 import { GoogleProvider } from '../GoogleProvider/GoogleProvider'
 
 type AppProvidersProps = {
@@ -9,7 +11,11 @@ type AppProvidersProps = {
 export const AppProviders = ({children}: AppProvidersProps) => {
     return (
         <GoogleProvider>
-            {children}
+            <BrowserRouter>
+                <ErrorBoundary>
+                    {children}
+                </ErrorBoundary>
+            </BrowserRouter>
         </GoogleProvider>
     )
 }

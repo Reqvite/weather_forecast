@@ -1,5 +1,7 @@
 interface User {
-    email: string
+    email: string;
+    picture: string;
+    name: string;
 }
 
 

@@ -1,16 +1,23 @@
 import { GoogleCredentialResponse, GoogleLogin as GoogleLoginButton } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
-import { storageApi } from '@/shared/packages/storage/storage';
-import { StorageKey } from '@/shared/types/storage';
+import { getRouteMain } from '@/app/providers/AppRouter/routeConfig';
+import { useAuth } from '@/shared/lib/hooks';
 import { User } from '@/shared/types/user';
 
 
 export const GoogleLogin = () => {
+    const { setUser } = useAuth()
+    const navigate = useNavigate()
+
     const login = (credentialResponse: GoogleCredentialResponse) => {
         if (credentialResponse.credential) {
             const user = jwtDecode<User>(credentialResponse.credential)
-            storageApi.set(StorageKey.USER, user.email)   
+            if (user) {
+                setUser(user)
+                navigate(getRouteMain())
+            }
         }
        
     }

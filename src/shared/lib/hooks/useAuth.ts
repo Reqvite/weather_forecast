@@ -1,23 +1,25 @@
 
-import { useEffect, useState } from "react"
+import { StorageKey } from "@/shared/types/storage";
+import { User } from "@/shared/types/user";
 
-import { storageApi } from "@/shared/packages/storage/storage"
-import { StorageKey } from "@/shared/types/storage"
+import { userNormalizer } from "../normalizers";
+import { useLocalStorage } from "./";
+
 
 export const useAuth = () => {
-    const [user, setUser] = useState(storageApi.get(StorageKey.USER));
+    const defaultValue = JSON.parse(localStorage.getItem(StorageKey.USER) ?? 'null');
+    const [user, updateUser] = useLocalStorage<User | null>(StorageKey.USER, defaultValue)
 
-
-    useEffect(() => {
-        const handleStorage = () => {
-            console.log(1)
-            setUser(storageApi.get(StorageKey.USER))
+    const setUser = (user?: User) => {
+        if (!user) {
+            updateUser(null)   
+            return
         }
+        const updatedUser = userNormalizer(user)
+        updateUser(updatedUser)
+    }
 
-        window.addEventListener('storage', handleStorage)
-        return () => window.removeEventListener('storage', handleStorage)
-    }, [])
+    const isAuth = user?.email
 
-
-    return user
-}
+    return {user, isAuth, setUser};
+};

@@ -1,11 +1,12 @@
 import { googleLogout } from "@react-oauth/google";
 
-import { storageApi } from "@/shared/packages/storage/storage";
-import { StorageKey } from "@/shared/types/storage";
+import { useAuth } from "@/shared/lib/hooks";
 
 export const GoogleLogout = () => {
+    const {setUser} = useAuth()
+
     const logout = () => {
-        storageApi.drop(StorageKey.USER);
+        setUser()
         googleLogout();
     };
 
