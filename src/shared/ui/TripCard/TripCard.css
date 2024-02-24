@@ -11,6 +11,16 @@
     transform: scale(1.01);
 }
 
+.tripCard__Button {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tripCard__ButtonSvg {
+    width: 20px;
+    height: 20px;
+}
+
 .tripCard__img {
     overflow: hidden;
     object-fit: cover;

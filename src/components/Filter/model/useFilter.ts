@@ -4,7 +4,7 @@ import { ItemWithTitle } from "@/shared/types/trip";
 
 
 export const useFilter = <T extends ItemWithTitle>(list: T[], setTripsList: (list: T[]) => void) => {
-    const [searchValue, setSearchValue] = useState<string>('');
+    const [, setSearchValue] = useState<string>('');
 
     const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);

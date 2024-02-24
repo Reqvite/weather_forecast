@@ -18,9 +18,11 @@
   --container-width: 1000px;
 
   --animation-duration: 300ms;
-  --border-primary: 2px solid rgb(100, 100, 99);
+  --border-primary: 2px solid rgb(212, 212, 212);
 
-  --max-width: 1400px
+  --max-width: 1400px;
+
+  --modal-z-index: 100;
 }
 
 * {
