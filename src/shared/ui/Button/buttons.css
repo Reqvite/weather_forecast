@@ -1,0 +1,37 @@
+.button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition-duration: var(--animation-duration);
+}
+
+.button:focus,
+.button:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.button.outline:focus,
+.button.outline:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.button.filled:focus,
+.button.filled:hover {
+    background-color: var(--color-blue-200);
+    color: #fff;
+}
+
+.button.filled {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+
+.button.outline {
+    background-color: transparent;
+    color: var(--color-accent);
+    border: 2px solid var(--color-accent);
+}

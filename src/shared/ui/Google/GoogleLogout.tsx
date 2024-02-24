@@ -2,6 +2,8 @@ import { googleLogout } from "@react-oauth/google";
 
 import { useAuth } from "@/shared/lib/hooks";
 
+import { Button } from "../Button/Button";
+
 export const GoogleLogout = () => {
     const {setUser} = useAuth()
 
@@ -11,8 +13,8 @@ export const GoogleLogout = () => {
     };
 
     return (
-        <button type="button" onClick={logout}>
+        <Button type="button" onClick={logout}>
       Logout
-        </button>
+        </Button>
     );
 };

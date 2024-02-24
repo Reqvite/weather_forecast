@@ -5,7 +5,8 @@
   --color-blue-300: #52b1e0;
   --color-blue-400: #242a3a;
   --color-accent: #52b1e0;
-  --color-gray: #e1e1e1;
+  --color-primary: #242a3a;
+  --color-secondary: rgb(100, 100, 99);
   --overlay-color: rgb(0 0 0 / 30%);
   --shadow: -1px 4px 74px -16px rgb(0 0 0 / 15%);
   --font-size-100: 14px;
@@ -15,4 +16,28 @@
   --font-size-500: 32px;
   --font-size-600: 36px;
   --container-width: 1000px;
+
+  --animation-duration: 300ms
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+input,
+button,
+textarea,
+select {
+  margin: 0;
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
 }

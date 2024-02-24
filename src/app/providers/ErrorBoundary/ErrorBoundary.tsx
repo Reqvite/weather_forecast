@@ -1,6 +1,6 @@
 import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 
-import { ErrorPage } from '@/app/pages';
+import { ErrorPage } from '@/pages';
 
 
 

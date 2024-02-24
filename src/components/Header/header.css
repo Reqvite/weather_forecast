@@ -1,0 +1,31 @@
+.header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: var(--color-accent);
+    font-size: var(--font-size-600);
+    font-weight: bold;
+    transition-duration: var(--animation-duration);
+    margin-right: 15px;
+}
+
+.logo:hover,
+.logo:hover {
+    color: var(--color-blue-200)
+}
+
+.rightBox {
+    display: flex;
+    align-items: center;
+    gap: 20px
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}

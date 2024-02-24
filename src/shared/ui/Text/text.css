@@ -1,0 +1,35 @@
+.text {
+    font-size: var(--font-size-200);
+}
+
+.text.primary {
+    color: var(--color-primary);
+}
+
+.text.accent {
+    color: var(--color-accent);
+}
+
+.text.secondary {
+    color: var(--color-secondary);
+}
+
+.text.white {
+    color: var(--color-white);
+}
+
+.text.small {
+    font-size: var(--font-size-300);
+}
+
+.text.medium {
+    font-size: var(--font-size-400);
+}
+
+.text.large {
+    font-size: var(--font-size-500);
+}
+
+.text.bold {
+    font-weight: bold;
+}

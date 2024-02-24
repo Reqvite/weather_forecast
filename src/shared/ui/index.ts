@@ -1,2 +1,5 @@
+export {Button} from './Button/Button'
+export { GoogleLogin, GoogleLogout } from './Google'
 export { Loader } from './Loader/Loader'
 export {StickyContentLayout} from './StickyContentLayout/StickyContentLayout'
+export {Text} from './Text/Text'
