@@ -7,8 +7,17 @@
     transition-duration: var(--animation-duration);
 }
 
+.isSelected {
+    border-color: var(--color-accent);
+}
+
 .tripCard:hover {
     transform: scale(1.01);
+}
+
+.tripCard:hover .tripCard__Button {
+    background-color: var(--color-accent);
+    color: var(--color-white)
 }
 
 .tripCard__Button {
@@ -22,6 +31,7 @@
 }
 
 .tripCard__img {
+    border-radius: 5px;
     overflow: hidden;
     object-fit: cover;
     width: 100%;

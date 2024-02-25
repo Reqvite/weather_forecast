@@ -1,0 +1,26 @@
+.dropdown-container {
+    cursor: pointer;
+    margin-top: 5px;
+    padding: 10px 30px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-primary);
+    border: var(--border-primary);
+    border-radius: 6px;
+    outline: none;
+}
+
+.dropdown-container__select option {
+    padding: 10px 30px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--color-primary);
+    border: var(--border-primary);
+    border-radius: 6px;
+    outline: none;
+}
+
+.dropdown-container__select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}

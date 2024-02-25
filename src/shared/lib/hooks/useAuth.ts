@@ -8,6 +8,7 @@ import { useLocalStorage } from "./";
 
 export const useAuth = () => {
     const defaultValue = JSON.parse(localStorage.getItem(StorageKey.USER) ?? 'null');
+
     const [user, updateUser] = useLocalStorage<User | null>(StorageKey.USER, defaultValue)
 
     const setUser = (user?: User) => {

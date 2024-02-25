@@ -1,25 +1,16 @@
 import './Modal.css'
 
-import { ReactNode, useCallback, useEffect } from "react";
+import { useCallback, useEffect } from "react";
 
 import PlusIcon from "@/shared/assets/icons/cross-svgrepo-com.svg?react";
+import { ModalProps } from '@/shared/types/uiTypes';
 
 import { Button } from '../Button/Button';
 import { Portal } from "../Portal/Portal";
 import { Text } from '../Text/Text';
 
-interface ModalProps {
-    title?: string;
-    className?: string;
-    children?: ReactNode;
-    isOpen?: boolean;
-    onClose?: () => void;
-    onClick?: () => void;
-    withFooter?: boolean;
-}
-
 export const Modal = (props: ModalProps):JSX.Element => {
-    const { title, children, onClose = () => {},onClick, withFooter = true } = props;
+    const { title, children, onClose = () => {},onClick, onSubmit,  withFooter = true} = props;
 
     const onKeyPress = useCallback((e:KeyboardEvent) => {
         const key = e.code
@@ -49,19 +40,19 @@ export const Modal = (props: ModalProps):JSX.Element => {
     return (
         <Portal element={document.getElementById('modals') ?? document.body}>
             <div className='modal'>
-                <div className='modal__content'>
+                <form autoComplete="off" className='modal__content' onSubmit={onSubmit}>
                     <div className='modal__header'>
                         {title && <Text>{title}</Text>}
-                        <Button className='modal__closeButton' onClick={onClose}><PlusIcon/></Button>
+                        <Button type='button' className='modal__closeButton' onClick={onClose}><PlusIcon/></Button>
                     </div>
                     <div className='modal__body'>
                         {children}
                     </div>
                     {withFooter && <div className='modal-footer'>
-                        <Button variant='outline' className='modal-footer__closeButton' onClick={onClose}>Close</Button>
+                        <Button type='button'  variant='outline' className='modal-footer__closeButton' onClick={onClose}>Close</Button>
                         <Button className='modal-footer__closeButton' onClick={onClick}>Save</Button>
                     </div>}
-                </div>
+                </form>
             </div>
         </Portal>
     );

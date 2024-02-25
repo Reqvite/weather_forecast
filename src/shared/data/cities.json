@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "title": "Washington",
+    "image": "https://cdn.pixabay.com/photo/2016/08/27/15/57/washington-d-1624419_640.jpg"
+  },
+  {
+    "id": "2",
+    "title": "Tokyo",
+    "image": "https://www.gotokyo.org/en/plan/tokyo-outline/images/main.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Bangkok",
+    "image": "https://static.theceomagazine.net/wp-content/uploads/2023/06/26102050/48-hours-in-Bangkok1.jpg"
+  },
+  {
+    "id": "4",
+    "title": "London",
+    "image": "https://media.cnn.com/api/v1/images/stellar/prod/220711102843-01-time-out-worlds-best-cities-2022-edinburgh.jpg?c=original"
+  }
+]

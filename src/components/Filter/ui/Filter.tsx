@@ -1,5 +1,5 @@
 import SearchIcon from "@/shared/assets/icons/search-svgrepo-com.svg?react";
-import { ItemWithTitle } from "@/shared/types/trip";
+import { ItemWithTitle } from "@/shared/types/entities";
 import { Input } from "@/shared/ui"
 
 import { useFilter } from "../model/useFilter";

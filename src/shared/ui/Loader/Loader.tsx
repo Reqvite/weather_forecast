@@ -7,7 +7,7 @@ type Props = {
 export const Loader = ({ isOverflow }: Props) =>
     isOverflow ? (
         <div className="overflowLoader">
-            <div data-test-id="loader" className="lds-ellipsis">
+            <div className="lds-ellipsis">
                 <div />
                 <div />
                 <div />
@@ -15,7 +15,7 @@ export const Loader = ({ isOverflow }: Props) =>
             </div>
         </div>
     ) : (
-        <div data-test-id="loader" className="lds-ellipsis centered">
+        <div  className="lds-ellipsis centered">
             <div />
             <div />
             <div />

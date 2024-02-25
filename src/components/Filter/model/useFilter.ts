@@ -1,6 +1,6 @@
 import { ChangeEvent, useState } from "react";
 
-import { ItemWithTitle } from "@/shared/types/trip";
+import { ItemWithTitle } from "@/shared/types/entities";
 
 
 export const useFilter = <T extends ItemWithTitle>(list: T[], setTripsList: (list: T[]) => void) => {
