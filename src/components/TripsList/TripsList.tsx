@@ -1,6 +1,6 @@
 import './TripsList.css';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { Trip } from '@/shared/types/entities';
 import { Button, TripCard } from '@/shared/ui';
