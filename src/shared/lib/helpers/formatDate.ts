@@ -12,12 +12,15 @@ export function formatDate(dateString:string) {
 }
 
 
-export const getWithin15Date = (today: Date) => {
-    const endDate = new Date(today); 
-    endDate.setDate(today.getDate() + 14); 
+export const getWithin15Date = () => {
+    const today = new Date(); 
+    const tomorrow = new Date(today);
+    tomorrow.setDate(today.getDate() + 1)
+    const endDate = new Date(tomorrow); 
+    endDate.setDate(tomorrow.getDate() + 14); 
 
     return { 
-        startDate: today.toISOString().slice(0, 10), 
+        startDate: tomorrow.toISOString().slice(0, 10), 
         endDate: endDate.toISOString().slice(0, 10),
     };
 };

@@ -7,7 +7,7 @@
 
 .logo {
     color: var(--color-accent);
-    font-size: var(--font-size-600);
+    font-size: var(--font-size-200);
     font-weight: bold;
     transition-duration: var(--animation-duration);
     margin-right: 15px;
@@ -22,6 +22,12 @@
     display: flex;
     align-items: center;
     gap: 20px
+}
+
+@media screen and (min-width:740.98px) {
+    .logo {
+        font-size: var(--font-size-600);
+    }
 }
 
 .img {

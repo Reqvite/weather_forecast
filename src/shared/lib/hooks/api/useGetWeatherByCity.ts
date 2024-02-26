@@ -5,7 +5,7 @@ import { Trip } from "@/shared/types/entities";
 
 import { weatherNormalizer } from "../../normalizers";
 
-export const useGetWeatherByCity = ({ title, startDate, endDate }: Trip) => {
+export const useGetWeatherByCity = ({ id, title, startDate, endDate }: Trip) => {
     const [isLoading, setIsLoading] = useState(true);
     const [weatherPeriodData, setWeatherPeriodData] = useState([]);
     const [weatherTodayData, setWeatherTodayData] = useState([]);
@@ -19,6 +19,8 @@ export const useGetWeatherByCity = ({ title, startDate, endDate }: Trip) => {
                 setWeatherPeriodData(weatherNormalizer(data, startDate, endDate));
                 setWeatherTodayData(weatherNormalizer(today, startDate, endDate))
             } catch (error) {
+                //@ts-expect-error ///
+                alert(error.response.data)
                 console.error("error:", error);
             } finally {
                 setIsLoading(false);
@@ -28,7 +30,7 @@ export const useGetWeatherByCity = ({ title, startDate, endDate }: Trip) => {
         fetchWeatherData();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [title]);
+    }, [id]);
 
     return { isLoading, weatherPeriodData, weatherTodayData };
 };

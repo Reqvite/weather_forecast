@@ -10,13 +10,13 @@ import { Text } from '../Text/Text';
 
 interface Props extends SelectHTMLAttributes<HTMLSelectElement>  {
     className?: string;
-     options: ItemWithTitle[];
+     options?: ItemWithTitle[];
     label?: string
     placeholder?: string;
 }
 
 export const Dropdown = (props:Props) => {
-    const { className, options,placeholder, label, ...otherProps } = props
+    const { className, options = [],placeholder, label, ...otherProps } = props
 
     return (
         <label className={classNames('label', {}, [className])} >
@@ -26,7 +26,7 @@ export const Dropdown = (props:Props) => {
                 <select className='dropdown-container__select'  {...otherProps}>
                     {placeholder && <option value="">{placeholder}</option>}
                     {options.map((option, index) => (
-                        <option key={index} value={option.title}>{option.title}</option>
+                        <option key={index} value={option.value}>{option.title}</option>
                     ))}
                 </select>
             </div>

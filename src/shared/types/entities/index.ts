@@ -25,5 +25,6 @@ export interface Weather {
 
 export interface ItemWithTitle {
     title: string;
-    id: string;
+    id?: string;
+    value?:string
 }

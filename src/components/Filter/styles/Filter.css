@@ -1,6 +1,23 @@
-.Filter {}
+.Filter {
+    font-size: var(--font-size-600);
+    gap: 20px;
+}
 
 .Filter__input {
     width: 100%;
     max-width: 200px;
+    margin-right: 20px;
+}
+
+.Filter__dropdown {
+    width: 100%;
+    max-width: 200px;
+}
+
+
+@media screen and (min-width:740.98px) {
+    .Filter {
+        display: flex;
+        font-size: var(--font-size-600);
+    }
 }
