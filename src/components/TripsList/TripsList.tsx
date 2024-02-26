@@ -45,8 +45,8 @@ export const TripsList = (props: Props) => {
                 ))}
             </ul>
             <div className='TripsList__pagination'>
-                <Button variant='outline' onClick={scrollLeft}>Previous</Button>
-                <Button onClick={scrollRight}>Next</Button>
+                <Button variant='outline' onClick={scrollLeft} >Previous</Button>
+                <Button onClick={scrollRight} >Next</Button>
             </div>
         </>
     );
