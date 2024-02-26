@@ -15,6 +15,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = (props: ButtonProps) => {
     const {
+        disabled,
         className,
         children,
         variant = 'filled',
@@ -22,7 +23,7 @@ export const Button = (props: ButtonProps) => {
     } = props;
 
     return (
-        <button className={classNames('button', {}, [variant, className])} {...otherProps}>
+        <button className={classNames('button', {'button__disabled': disabled}, [variant, className])} {...otherProps}>
             {children}
         </button>
     );

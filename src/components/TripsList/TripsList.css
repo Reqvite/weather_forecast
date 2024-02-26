@@ -5,6 +5,12 @@
     flex-wrap: wrap;
 }
 
+.TripsList__pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
 @media screen and (min-width:740.98px) {
     .TripsList {
         justify-content: start

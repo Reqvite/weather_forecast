@@ -39,3 +39,8 @@
     color: var(--color-accent);
     border: 2px solid var(--color-accent);
 }
+
+
+.button__disabled {
+    cursor: not-allowed;
+}

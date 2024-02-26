@@ -1,3 +1,3 @@
 export const sortOptions = [
-    { value: 'startDate', title: 'Start date' },
+    { value: 'startDate', title: 'Sort by start date' },
 ];

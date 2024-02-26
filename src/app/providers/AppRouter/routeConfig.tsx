@@ -5,6 +5,7 @@ import { LoginPage, MainPage } from "@/pages";
 export enum AppRoutes {
     MAIN = 'main',
     SIGN_IN = 'sign-in',
+    NOT_FOUND = 'not-found',
 }
 
 export type AppRoutesProps = RouteProps & {
@@ -23,5 +24,9 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: getRouteMain(),
         element: <MainPage />,
         needAuth: true,
+    },
+    [AppRoutes.NOT_FOUND]: {
+        path: '*',
+        element: <MainPage />,
     },
 };

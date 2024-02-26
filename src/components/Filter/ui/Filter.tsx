@@ -21,7 +21,7 @@ export const Filter = <T extends ItemWithTitle>(props: Props<T>) => {
     return (
         <div className='Filter'>
             <Input className="Filter__input" onChange={handleSearchChange} leftAddon={<SearchIcon />} placeholder="Search your trip" />
-            <Dropdown className='Filter__dropdown' onChange={handleSortByDateChange} options={sortOptions} placeholder='Sort by'/>
+            <Dropdown className='Filter__dropdown' onChange={handleSortByDateChange} options={sortOptions} placeholder='Sort by -'/>
         </div>
     )
 }

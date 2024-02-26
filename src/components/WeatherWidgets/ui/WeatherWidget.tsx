@@ -38,7 +38,7 @@ export const WeatherWidget = (props: Props) => {
                 <Text bold size='medium'>{dayOfTheWeek}</Text>
                 <div className='WeatherWidget__ByDayContentBox '>
                     <WeatherIcon weather={icon} />
-                    <Text size='large' bold>{temp}°</Text>
+                    <Text size='large' bold>{temp}°C</Text>
                 </div>
                 <Text size='medium'>{title}</Text>
                 {startDate && <Timer classnames='WeatherWidget__timer' startDate={startDate} />}
@@ -56,24 +56,10 @@ export const WeatherWidget = (props: Props) => {
                     <Text size='medium'>{dayOfTheWeek}</Text>
                     <Text color='secondary'>{date}</Text>
                     <WeatherIcon weather={icon} />
-                    <Text bold>{tempMax}° / {tempMin}°</Text>
+                    <Text bold>{tempMax}°C / {tempMin}°C</Text>
                 </li>)} 
             </ul>
         </div>
-    }
-    
-    return (
-        <div className='WeatherWidget WeatherWidgetByDay'>
-            <Text size='medium' bold>{title}</Text>
-            {isLoading ? <div className='WeatherWidget__loader'><Loader /></div> : <div className='WeatherWidget__ByDayContent'>
-                <Text bold size='medium'>{dayOfTheWeek}</Text>
-                <div className='WeatherWidget__ByDayContentBox '>
-                    <WeatherIcon weather={icon} />
-                    <Text size='large' bold>{temp}°</Text>
-                </div>
-                <Text size='medium'>{title}</Text>
-            </div>}
-        </div>
-    )
+    } 
 }
 
