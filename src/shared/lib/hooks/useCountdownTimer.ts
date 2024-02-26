@@ -10,7 +10,12 @@ type TimeLeft = {
 export const useCountdownTimer = (targetDate: Date): {timeLeft: TimeLeft, isTimerEnd: boolean} => {
     const calculateTimeLeft = useCallback((): TimeLeft => {
         const difference = +new Date(targetDate) - +new Date();
-        let timeLeft = {} as TimeLeft;
+        let timeLeft = {
+            days: 0,
+            hours: 0,
+            minutes: 0,
+            seconds: 0,
+        };
 
         if (difference > 0) {
             timeLeft = {

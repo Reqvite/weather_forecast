@@ -18,5 +18,6 @@ export const getWithin15Date = (today: Date) => {
 
     return { 
         startDate: today.toISOString().slice(0, 10), 
+        endDate: endDate.toISOString().slice(0, 10),
     };
 };

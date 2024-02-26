@@ -15,7 +15,7 @@ export const Timer: React.FC<TimerProps> = ({ startDate, classnames }) => {
     
     return (
         <div className={classNames('timer', {}, [classnames])}>     
-            {isTimerEnd && <Text size='medium' className='timer__start'>Trip has already started</Text>}
+            <Text size='medium' className={classNames('timer__start', {isTimerEnd})}>Trip has already started</Text>
             <div className='timer__content '>
                 <div  className='timer__box'>
                     <Text size='medium' bold>{timeLeft.days}</Text>

@@ -9,7 +9,7 @@ import { City, Trip } from "@/shared/types/entities";
 import { ModalProps } from "@/shared/types/uiTypes";
 import { Dropdown, Input, Modal } from "@/shared/ui";
 
-const { startDate: minDate } = getWithin15Date(new Date());
+const { startDate: minDate, endDate:maxDate } = getWithin15Date(new Date());
 
 type Props = ModalProps & {
     list: Trip[];
@@ -24,6 +24,7 @@ export const CreateTripModal = (props: Props) => {
     const [city, setCity] = useState<City>(list[0] || {});
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
+
 
     const onChangeCity = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const value = e.target.value
@@ -63,7 +64,7 @@ export const CreateTripModal = (props: Props) => {
                     type="date"
                     min={minDate}
                     value={startDate}
-                    // max={endDate}
+                    max={endDate || maxDate}
                     onChange={(e) => setStartDate(e.target.value)}
                     fullWidth
                     required
@@ -73,9 +74,9 @@ export const CreateTripModal = (props: Props) => {
                     placeholder="Select date"
                     name="date"
                     type="date"
-                    min={minDate}
+                    min={startDate || minDate}
                     value={endDate}
-                    // max={endDate}
+                    max={maxDate}
                     onChange={(e) => setEndDate(e.target.value)}
                     fullWidth
                     required

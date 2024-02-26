@@ -11,7 +11,9 @@
 }
 
 .timer__start {
+    opacity: 0;
     text-align: center;
+    transition: var(--animation-duration);
 }
 
 .timer__box {
@@ -19,4 +21,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.isTimerEnd {
+    opacity: 1;
 }
