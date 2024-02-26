@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Filter } from "@/components/Filter";
 import { CreateTripModal } from "@/components/Modals";
 import { TripsList } from "@/components/TripsList/TripsList";
-import { WeatherByDayWidget, WeatherByWeekWidget } from "@/components/WeatherWidgets";
+import {WeatherWidget } from "@/components/WeatherWidgets";
 import trips from "@/shared/data/trips.json";
 import { useGetWeatherByCity,useSelectedTrip, useTrips } from "@/shared/lib/hooks";
 import { Trip } from "@/shared/types/entities";
@@ -35,10 +35,10 @@ const MainPage = () => {
                     {modalIsOpen && (
                         <CreateTripModal list={defaultList} setTripsList={setTripsList} onClose={onToggleModal} />
                     )}
-                    <WeatherByWeekWidget data={weatherPeriodData} isLoading={isLoading} />
+                    <WeatherWidget variant='byWeek' data={weatherPeriodData} isLoading={isLoading} />
                 </>
             }
-            right={<WeatherByDayWidget data={weatherTodayData}  isLoading={isLoading}/>}
+            right={<WeatherWidget  data={weatherTodayData}  isLoading={isLoading}/>}
         />
     );
 };

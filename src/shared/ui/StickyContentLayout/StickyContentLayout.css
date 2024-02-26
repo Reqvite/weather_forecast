@@ -1,17 +1,12 @@
 .mainLayout {
-  display: grid;
-  grid-template-areas:
-    'content right';
-  grid-template-columns: 70fr 30fr;
-}
-
-
-.left {
-  grid-area: left;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
 }
 
 .content {
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   gap: 30px;
   grid-area: content;
@@ -25,7 +20,21 @@
 }
 
 .right {
-  position: sticky;
-  top: 32px;
-  height: fit-content;
+  padding: 0 16px;
+}
+
+@media screen and (min-width:740.98px) {
+  .mainLayout {
+    display: grid;
+    grid-template-areas:
+      'content right';
+    grid-template-columns: 70fr 30fr;
+  }
+
+  .right {
+    position: sticky;
+    top: 32px;
+    height: fit-content;
+    padding: 0 0;
+  }
 }

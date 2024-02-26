@@ -1,2 +1,1 @@
-export { WeatherByDayWidget, } from './ui/WeatherByDayWidget'
-export {WeatherByWeekWidget} from './ui/WeatherByWeekWidget'
+export { WeatherWidget, } from './ui/WeatherWidget'

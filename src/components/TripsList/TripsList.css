@@ -1,5 +1,12 @@
 .TripsList {
     display: flex;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+@media screen and (min-width:740.98px) {
+    .TripsList {
+        justify-content: start
+    }
 }

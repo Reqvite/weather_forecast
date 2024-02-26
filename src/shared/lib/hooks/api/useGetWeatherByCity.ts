@@ -6,7 +6,7 @@ import { Trip } from "@/shared/types/entities";
 import { weatherNormalizer } from "../../normalizers";
 
 export const useGetWeatherByCity = ({ title, startDate, endDate }: Trip) => {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
     const [weatherPeriodData, setWeatherPeriodData] = useState([]);
     const [weatherTodayData, setWeatherTodayData] = useState([]);
 
@@ -16,7 +16,7 @@ export const useGetWeatherByCity = ({ title, startDate, endDate }: Trip) => {
             try {
                 const {data} = await $api(`timeline/${title}/${startDate}/${endDate}?unitGroup=metric&include=days`);
                 const {data: today} = await $api(`timeline/${title}/today?unitGroup=metric&include=days`);
-                setWeatherPeriodData(weatherNormalizer(data));
+                setWeatherPeriodData(weatherNormalizer(data, startDate, endDate));
                 setWeatherTodayData(weatherNormalizer(today, startDate, endDate))
             } catch (error) {
                 console.error("error:", error);

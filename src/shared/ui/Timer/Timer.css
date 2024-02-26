@@ -1,0 +1,22 @@
+.timer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.timer__content {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.timer__start {
+    text-align: center;
+}
+
+.timer__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

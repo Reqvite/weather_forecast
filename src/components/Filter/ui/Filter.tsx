@@ -1,3 +1,5 @@
+import '../styles/Filter.css'
+
 import SearchIcon from "@/shared/assets/icons/search-svgrepo-com.svg?react";
 import { ItemWithTitle } from "@/shared/types/entities";
 import { Input } from "@/shared/ui"
@@ -17,7 +19,7 @@ export const Filter = <T extends ItemWithTitle>(props: Props<T>) => {
 
     return (
         <>
-            <Input onChange={handleSearchChange} leftAddon={<SearchIcon />} placeholder="Search your trip" />
+            <Input className="Filter__input" onChange={handleSearchChange} leftAddon={<SearchIcon />} placeholder="Search your trip" />
         </>
     )
 }

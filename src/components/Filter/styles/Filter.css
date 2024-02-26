@@ -1,0 +1,6 @@
+.Filter {}
+
+.Filter__input {
+    width: 100%;
+    max-width: 200px;
+}

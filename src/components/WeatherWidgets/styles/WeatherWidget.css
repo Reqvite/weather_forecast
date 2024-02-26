@@ -3,24 +3,28 @@
     display: block;
     border-radius: 6px;
     max-width: 800px;
-    height: auto;
+    min-height: 230px;
+    overflow: hidden;
     background: var(--color-blue-transparent);
 }
 
 .WeatherWidgetByDay {
-    padding: 80px 10px;
+    height: 500px
 }
 
 .WeatherWidget__loader {
     width: 100%;
+    min-height: 100%;
     display: flex;
+    align-items: center;
     justify-content: center;
 }
 
 .WeatherWidget__list {
+    width: auto;
     margin-top: 30px;
     display: flex;
-    gap: 30px;
+    gap: 15px;
     overflow-x: auto;
     overflow-y: hidden;
     scrollbar-width: thin;
@@ -50,6 +54,8 @@
 }
 
 .WeatherWidget__ByDayContent {
+    padding: 30px;
+    height: 100%;
     gap: 20px;
     display: flex;
     flex-direction: column;
@@ -60,4 +66,8 @@
 .WeatherWidget__ByDayContentBox {
     display: flex;
     gap: 10px;
+}
+
+.WeatherWidget__timer {
+    margin-top: 50px;
 }

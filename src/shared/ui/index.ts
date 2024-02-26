@@ -6,5 +6,6 @@ export { Loader } from './Loader/Loader'
 export {Modal} from './Modal/Modal'
 export {StickyContentLayout} from './StickyContentLayout/StickyContentLayout'
 export { Text } from './Text/Text'
+export {Timer} from './Timer/Timer'
 export { TripCard } from './TripCard/TripCard';
-export {WeatherIcon} from './WeatherIcon/WeatherIcon'
+export { WeatherIcon } from './WeatherIcon/WeatherIcon'

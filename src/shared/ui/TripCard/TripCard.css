@@ -1,15 +1,10 @@
 .tripCard {
     cursor: pointer;
     width: 100%;
-    max-width: 250px;
-    border: var(--border-primary);
-    border-radius: 5px;
+    max-width: 350px;
     transition-duration: var(--animation-duration);
 }
 
-.isSelected {
-    border-color: var(--color-accent);
-}
 
 .tripCard:hover {
     transform: scale(1.01);
@@ -31,7 +26,7 @@
 }
 
 .tripCard__img {
-    border-radius: 5px;
+    border-radius: 5px 5px 0 0;
     overflow: hidden;
     object-fit: cover;
     width: 100%;
@@ -39,11 +34,27 @@
 }
 
 .tripCard__infoBox {
-
+    height: 95px;
     padding: 20px;
+    border: var(--border-primary);
+    border-radius: 0 0 5px 5px;
+    border-top: none
 }
 
 
 .tripCard__date {
     margin-top: 10px
+}
+
+@media screen and (min-width:740.98px) {
+    .tripCard {
+        cursor: pointer;
+        width: 100%;
+        max-width: 250px;
+        transition-duration: var(--animation-duration);
+    }
+}
+
+.isSelectedCard {
+    border-color: var(--color-accent);
 }
