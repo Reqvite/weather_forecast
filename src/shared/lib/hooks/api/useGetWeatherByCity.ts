@@ -5,7 +5,12 @@ import { Trip } from "@/shared/types/entities";
 
 import { weatherNormalizer } from "../../normalizers";
 
-export const useGetWeatherByCity = ({ id, title, startDate, endDate }: Trip) => {
+export const useGetWeatherByCity = ({
+    id,
+    title,
+    startDate,
+    endDate,
+}: Trip) => {
     const [isLoading, setIsLoading] = useState(true);
     const [weatherPeriodData, setWeatherPeriodData] = useState([]);
     const [weatherTodayData, setWeatherTodayData] = useState([]);
@@ -14,13 +19,17 @@ export const useGetWeatherByCity = ({ id, title, startDate, endDate }: Trip) => 
         const fetchWeatherData = async () => {
             setIsLoading(true);
             try {
-                const {data} = await $api(`timeline/${title}/${startDate}/${endDate}?unitGroup=metric&include=days`);
-                const {data: today} = await $api(`timeline/${title}/today?unitGroup=metric&include=days`);
+                const { data } = await $api(
+                    `timeline/${title}/${startDate}/${endDate}?unitGroup=metric&include=days`
+                );
+                const { data: today } = await $api(
+                    `timeline/${title}/today?unitGroup=metric&include=days`
+                );
                 setWeatherPeriodData(weatherNormalizer(data, startDate, endDate));
-                setWeatherTodayData(weatherNormalizer(today, startDate, endDate))
+                setWeatherTodayData(weatherNormalizer(today, startDate, endDate));
             } catch (error) {
                 //@ts-expect-error ///
-                alert(error.response.data)
+                alert(error.response.data);
                 console.error("error:", error);
             } finally {
                 setIsLoading(false);
