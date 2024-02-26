@@ -1,6 +1,6 @@
 import './TripsList.css';
 
-import { useState } from 'react';
+import { useRef } from 'react';
 
 import { Trip } from '@/shared/types/entities';
 import { Button, TripCard } from '@/shared/ui';
@@ -12,28 +12,29 @@ type Props = {
     selectedItem: Trip;
 }
 
+const scrollValue = 200
+
 export const TripsList = (props: Props) => {
     const { setModalIsOpen, onItemClick, selectedItem, list } = props;
-    const [startIndex, setStartIndex] = useState(0);
-    const itemsPerPage = 5;
+    const tripsListRef = useRef<HTMLUListElement>(null);
 
-    const handleNext = () => {
-        if (startIndex + itemsPerPage < list.length) {
-            setStartIndex(startIndex + itemsPerPage);
+    const scrollLeft = () => {
+        if (tripsListRef.current) {
+            tripsListRef.current.scrollLeft -= scrollValue;
         }
     };
 
-    const handlePrevious = () => {
-        if (startIndex - itemsPerPage >= 0) {
-            setStartIndex(startIndex - itemsPerPage);
+    const scrollRight = () => {
+        if (tripsListRef.current) {
+            tripsListRef.current.scrollLeft += scrollValue; 
         }
     };
 
     return (
         <>
-            <ul className='TripsList'>
+            <ul className='TripsList' ref={tripsListRef}>
                 <TripCard emptyCard onClick={setModalIsOpen} />
-                {list.slice(startIndex, startIndex + itemsPerPage).map(trip => (
+                {list.map(trip => (
                     <li key={trip.id}>
                         <TripCard
                             isSelected={selectedItem.id === trip.id}
@@ -44,8 +45,8 @@ export const TripsList = (props: Props) => {
                 ))}
             </ul>
             <div className='TripsList__pagination'>
-                <Button variant='outline' onClick={handlePrevious} disabled={startIndex === 0}>Previous</Button>
-                <Button onClick={handleNext} disabled={startIndex + itemsPerPage >= list.length}>Next</Button>
+                <Button variant='outline' onClick={scrollLeft}>Previous</Button>
+                <Button onClick={scrollRight}>Next</Button>
             </div>
         </>
     );
