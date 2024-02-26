@@ -1,5 +1,8 @@
 import './header.css'
 
+import { Link } from 'react-router-dom'
+
+import { getRouteMain } from '@/app/providers/AppRouter/routeConfig'
 import { useAuth } from '@/shared/lib/hooks'
 import { GoogleLogout, Text } from '@/shared/ui'
 
@@ -12,7 +15,7 @@ export const Header = () => {
 
     return (
         <header className='header'>
-            <a className='logo' href='#'>Weather forecast</a>
+            <Link className='logo' to={getRouteMain()}>Weather forecast</Link>
             <div className='rightBox'>
                 <Text bold color='secondary'>{user?.name}</Text>
                 {user?.picture && <img className='img' src={user?.picture}/>}
