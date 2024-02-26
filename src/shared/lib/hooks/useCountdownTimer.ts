@@ -7,7 +7,8 @@ type TimeLeft = {
   seconds: number;
 };
 
-export const useCountdownTimer = (targetDate: Date): {timeLeft: TimeLeft, isTimerEnd: boolean} => {
+export const useCountdownTimer = (targetDate: Date): { timeLeft: TimeLeft, isTimerEnd: boolean, isTimerStarted: boolean } => {
+    const [isTimerStarted, setIsTimerStarted] = useState(false);
     const calculateTimeLeft = useCallback((): TimeLeft => {
         const difference = targetDate.getTime() - new Date().getTime();
         let timeLeft = {
@@ -34,6 +35,7 @@ export const useCountdownTimer = (targetDate: Date): {timeLeft: TimeLeft, isTime
 
     useEffect(() => {
         const timer = setTimeout(() => {
+            setIsTimerStarted(true)
             setTimeLeft((prevTimeLeft) => {
                 if (
                     prevTimeLeft.days === 0 &&
@@ -52,5 +54,5 @@ export const useCountdownTimer = (targetDate: Date): {timeLeft: TimeLeft, isTime
         return () => clearTimeout(timer);
     }, [calculateTimeLeft, timeLeft]);
 
-    return {timeLeft, isTimerEnd}
+    return {timeLeft, isTimerEnd, isTimerStarted}
 };

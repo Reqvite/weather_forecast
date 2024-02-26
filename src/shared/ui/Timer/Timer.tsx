@@ -11,11 +11,11 @@ type TimerProps = {
 };
 
 export const Timer: React.FC<TimerProps> = ({ startDate, classnames }) => {
-    const { timeLeft, isTimerEnd } = useCountdownTimer(new Date(startDate))
+    const { timeLeft, isTimerEnd, isTimerStarted  } = useCountdownTimer(new Date(startDate))
     
     return (
         <div className={classNames('timer', {}, [classnames])}>     
-            <Text  className={classNames('timer__start')}>{isTimerEnd ? 'Trip has already started' : 'Time before the start of the trip'}</Text>
+            <Text className={classNames('timer__start', {isTimerStarted})}>{isTimerEnd ? 'Trip has already started' : 'Time before the start of the trip'}</Text>
             <div className='timer__content '>
                 <div  className='timer__box'>
                     <Text size='medium' bold>{timeLeft.days}</Text>
